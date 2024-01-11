@@ -6,6 +6,13 @@ on:
       - 'main'
 
 jobs:
+  sast-analysis:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: AppThreat/sast-scan-action@master
+      with:
+        type: "nodejs"
+
   docker:
     runs-on: ubuntu-latest
     steps:
